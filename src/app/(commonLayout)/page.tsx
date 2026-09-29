@@ -5,6 +5,7 @@ import HeroSection from "../features/home/components/HeroSection";
 import LatestCoursesSection from "../features/home/components/LatestCoursesSection";
 import LearningPaths from "../features/home/components/LearningPaths";
 import LogoSections from "../features/home/components/LogoSections";
+import Testimonials from "../features/home/components/Testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <LearningPaths />
       <CourseShowcase />
       <CreatorBanner />
+      <Testimonials />
     </div>
   );
 }
