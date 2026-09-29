@@ -10,7 +10,7 @@ export default function CommonLayout(
     }
 ) {
     return (
-        <div>
+        <div className='relative'>
             <Navbar />
             <div className="min-h-[100vh]">
                 {children}
