@@ -13,12 +13,12 @@ export default function LogoSections() {
     return (
         <section className=" bg-gray-100">
 
-            <div className="max-w-330 mx-auto lg:h-[180px]">
+            <div className="max-w-330 mx-auto lg:h-50">
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 items-center justify-items-center w-full h-full">
                     {logos.map((logo) => (
                         <div
                             key={logo.id}
-                            className="relative w-full h-12 sm:h-16 lg:h-20 max-w-[140px] flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            className="relative w-full h-12 sm:h-16 lg:h-20 max-w-35 flex items-center justify-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                         >
                             <Image
                                 src={logo.src}

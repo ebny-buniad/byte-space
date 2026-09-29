@@ -1,0 +1,30 @@
+export const INITIAL_CATEGORIES = [
+    'Featured',
+    'Music',
+    'Drawing & Painting',
+    'Marketing',
+    'Animation',
+    'Social Media',
+    'UI/UX Design',
+    'Creative Marketing',
+    'Digital Illustration',
+    'Film & Video',
+    'Crafts',
+    'Freelance & Entrepreneurship',
+    'Graphic Design',
+    'Photography',
+    'Productivity',
+    'Web Development',
+    'Data Science',
+    'Cooking',
+];
+
+export const MORE_CATEGORIES = [
+    'Business',
+    'Cyber Security',
+    '3D Animation',
+    'App Development',
+    'AI & Machine Learning',
+    'Personal Branding',
+    'Financial Literacy',
+];

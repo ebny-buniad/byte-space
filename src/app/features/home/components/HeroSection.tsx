@@ -25,7 +25,7 @@ export default function HeroSection() {
             />
 
             {/* ---------------- STAGE ---------------- */}
-            <div className="relative mx-auto min-h-[880px] w-full max-w-[1440px] lg:min-h-0 lg:aspect-[1440/1024]">
+             <div className="relative mx-auto min-h-[860px] w-full max-w-[1440px] [--arch:max(490px,78vw)] md:min-h-[960px] lg:min-h-0 lg:aspect-[1440/1024]">
 
 
                 {/* ---------------- HEADLINE, COPY, SEARCH ---------------- */}
@@ -67,7 +67,7 @@ export default function HeroSection() {
                 {/* ---------------- LIME ARCH ---------------- */}
                 <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute left-1/2 top-[58%] z-0 aspect-square w-[max(620px,78vw)] -translate-x-1/2 max-lg:top-[62%]"
+                    className="pointer-events-none absolute bottom-0 left-1/2 z-0 aspect-square w-[var(--arch)] -translate-x-1/2 translate-y-[62%]"
                 >
                     <Image
                         src="/images/hero-img/arch.png"
@@ -80,7 +80,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* ---------------- STUDENT ---------------- */}
-                <div className="pointer-events-none absolute bottom-0 left-1/2 z-10 aspect-[678/541] w-[max(360px,47vw)] -translate-x-[48%]">
+                <div className="pointer-events-none absolute bottom-0 left-1/2 z-10 aspect-[678/541] w-[max(300px,calc(var(--arch)*0.6))] -translate-x-[48%]">
                     <Image
                         src="/images/hero-img/student.png"
                         alt="Smiling student with a headset holding a laptop"
@@ -90,6 +90,7 @@ export default function HeroSection() {
                         priority
                     />
                 </div>
+
 
                 {/* ---------------- FLOATING CARDS ---------------- */}
                 {/* UI/UX Design */}
