@@ -22,8 +22,8 @@ export default function Navbar() {
     )
     const authLinks = (
         <>
-            <li><Link href="/signin">Sign In</Link></li>
-            <li><Link href="/signin">Join Us</Link></li>
+            <li><Link href="/auth/sign-in">Sign In</Link></li>
+            <li><Link href="/auth/sign-up">Join Us</Link></li>
         </>
     )
 
