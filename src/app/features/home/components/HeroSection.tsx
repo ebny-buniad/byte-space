@@ -1,8 +1,5 @@
 'use client';
-
-import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -10,32 +7,14 @@ const jakarta = Plus_Jakarta_Sans({
     weight: ['300', '400', '500', '600', '700', '800'],
 });
 
-/*
- * The layout is built on the 1440 x 1024 design frame.
- * On lg+ screens the stage keeps that aspect ratio, so every position below
- * (given in %) and every size (given in vw) scales exactly like the design.
- * Below lg the stage gets a fixed min-height and shapes use a pixel floor.
- */
-
 const AVATARS = ['#f4a3b5', '#e8b07a', '#8a6a55', '#c9d6df', '#b98ea0', '#6b7f91'];
-
-
-
-function BagIcon() {
-    return (
-        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M3 6h14l1 14H2L3 6z" />
-            <path d="M7 9V4a3 3 0 016 0v5" />
-        </svg>
-    );
-}
 
 export default function HeroSection() {
     return (
         <section
             className={`${jakarta.className} relative w-full overflow-hidden bg-[#0339e3] text-white`}
         >
-            {/* ---------------- SQUARE GRID OVERLAY (120px cells, centred) ---------------- */}
+            {/* ---------------- SQUARE GRID OVERLAY ---------------- */}
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 z-0 [background-position:50%_0] [background-size:60px_60px] md:[background-size:120px_120px]"
@@ -47,7 +26,7 @@ export default function HeroSection() {
 
             {/* ---------------- STAGE ---------------- */}
             <div className="relative mx-auto min-h-[880px] w-full max-w-[1440px] lg:min-h-0 lg:aspect-[1440/1024]">
-                
+
 
                 {/* ---------------- HEADLINE, COPY, SEARCH ---------------- */}
                 <div className="relative z-20 mx-auto mt-6 max-w-[900px] px-5 text-center pt-30">
@@ -85,16 +64,25 @@ export default function HeroSection() {
                     </form>
                 </div>
 
-                {/* ---------------- LIME ARCH (pure CSS circle, clipped by the stage) ---------------- */}
+                {/* ---------------- LIME ARCH ---------------- */}
                 <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute left-1/2 top-[57%] z-0 aspect-square w-[max(620px,78vw)] -translate-x-1/2 rounded-full bg-[#ccff00] max-lg:top-[62%]"
-                />
+                    className="pointer-events-none absolute left-1/2 top-[58%] z-0 aspect-square w-[max(620px,78vw)] -translate-x-1/2 max-lg:top-[62%]"
+                >
+                    <Image
+                        src="/images/hero-img/arch.png"
+                        alt=""
+                        fill
+                        sizes="(min-width: 1440px) 1120px, 78vw"
+                        className="object-contain object-top"
+                        priority
+                    />
+                </div>
 
                 {/* ---------------- STUDENT ---------------- */}
                 <div className="pointer-events-none absolute bottom-0 left-1/2 z-10 aspect-[678/541] w-[max(360px,47vw)] -translate-x-[48%]">
                     <Image
-                        src="/images/student.png"
+                        src="/images/hero-img/student.png"
                         alt="Smiling student with a headset holding a laptop"
                         fill
                         sizes="(min-width: 1440px) 678px, 47vw"
@@ -127,7 +115,6 @@ export default function HeroSection() {
                         <span className="text-[#b6e600]" aria-hidden="true">★</span>
                     </p>
                     <div className="mt-2 flex items-center -space-x-2">
-                        {/* Swap these for <Image> avatars once you have the photos */}
                         {AVATARS.map((color) => (
                             <span
                                 key={color}
@@ -144,32 +131,39 @@ export default function HeroSection() {
                 {/* ---------------- 3D DECORATIVE SHAPES ---------------- */}
                 {/* Left: big lime spring */}
                 <div className="pointer-events-none absolute -left-[6%] top-[30%] z-10 h-[max(150px,19vw)] w-[max(130px,15vw)] lg:-left-[8%] lg:top-[27.5%]">
-                    <Image src="/images/yellow-spiral.png" alt="" aria-hidden="true" fill sizes="220px" className="object-contain" />
+                    <Image src="/images/hero-img/yellow-spiral.png" alt="" aria-hidden="true" fill sizes="220px" className="object-contain" />
                 </div>
 
                 {/* Left: small white spring */}
                 <div className="pointer-events-none absolute left-[12%] top-[46%] z-10 h-[max(70px,9vw)] w-[max(64px,8vw)] lg:left-[15%] lg:top-[49%]">
-                    <Image src="/images/white-spiral.png" alt="" aria-hidden="true" fill sizes="120px" className="object-contain" />
+                    <Image src="/images/hero-img/white-spiral.png" alt="" aria-hidden="true" fill sizes="120px" className="object-contain" />
                 </div>
 
                 {/* Left: white ring */}
-                <div className="pointer-events-none absolute -left-[8%] top-[76%] z-10 h-[max(130px,16vw)] w-[max(140px,17vw)] lg:left-[4.5%] lg:top-[72%]">
-                    <Image src="/images/white-ring.png" alt="" aria-hidden="true" fill sizes="250px" className="object-contain" />
+                <div className="pointer-events-none absolute -left-[8%] top-[72%] z-10 h-[max(200px,23vw)] w-[max(220px,25vw)] lg:left-[-3%] lg:top-[68%]">
+                    <Image
+                        src="/images/hero-img/white-ring.png"
+                        alt=""
+                        aria-hidden="true"
+                        fill
+                        sizes="350px"
+                        className="object-contain"
+                    />
                 </div>
 
                 {/* Right: lime cylinder */}
                 <div className="pointer-events-none absolute -right-[10%] top-[32%] z-10 h-[max(150px,21vw)] w-[max(140px,17vw)] lg:-right-[10%] lg:top-[25%]">
-                    <Image src="/images/lime.png" alt="" aria-hidden="true" fill sizes="260px" className="object-contain" />
+                    <Image src="/images/hero-img/lime.png" alt="" aria-hidden="true" fill sizes="260px" className="object-contain" />
                 </div>
 
                 {/* Right: white pyramid */}
                 <div className="pointer-events-none absolute right-[6%] top-[47%] z-10 h-[max(70px,10vw)] w-[max(70px,9.5vw)] lg:right-[12.5%] lg:top-[47%]">
-                    <Image src="/images/white-pyramid.png" alt="" aria-hidden="true" fill sizes="140px" className="object-contain" />
+                    <Image src="/images/hero-img/white-pyramid.png" alt="" aria-hidden="true" fill sizes="140px" className="object-contain" />
                 </div>
 
                 {/* Right: large white spring */}
                 <div className="pointer-events-none absolute -right-[6%] top-[76%] z-10 h-[max(130px,17.5vw)] w-[max(110px,14vw)] lg:right-[3.6%] lg:top-[69%]">
-                    <Image src="/images/white-spiral.png" alt="" aria-hidden="true" fill sizes="200px" className="object-contain" />
+                    <Image src="/images/hero-img/white-spiral.png" alt="" aria-hidden="true" fill sizes="200px" className="object-contain" />
                 </div>
             </div>
         </section>
