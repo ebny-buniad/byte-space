@@ -53,6 +53,7 @@ export type Course = {
   level: 'Beginner' | 'Intermediate' | 'Advanced' | string;
   category: string;
   creatorId: string;
+  username: string;
   about: CourseAbout;
   lessons: Lesson[];
   reviews: Review[];

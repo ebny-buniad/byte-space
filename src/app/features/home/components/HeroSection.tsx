@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import GridBackground from '@/app/components/ui/GridBackground';
 
 const jakarta = Plus_Jakarta_Sans({
     subsets: ['latin'],
@@ -14,19 +15,10 @@ export default function HeroSection() {
         <section
             className={`${jakarta.className} relative w-full overflow-hidden bg-[#0339e3] text-white`}
         >
-            {/* ---------------- SQUARE GRID OVERLAY ---------------- */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-0 [background-position:50%_0] [background-size:60px_60px] md:[background-size:120px_120px]"
-                style={{
-                    backgroundImage:
-                        'linear-gradient(to right, rgba(255,255,255,0.13) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.13) 1px, transparent 1px)',
-                }}
-            />
+            <GridBackground />
 
             {/* ---------------- STAGE ---------------- */}
-             <div className="relative mx-auto min-h-[860px] w-full max-w-[1440px] [--arch:max(490px,78vw)] md:min-h-[960px] lg:min-h-0 lg:aspect-[1440/1024]">
-
+            <div className="relative mx-auto min-h-[860px] w-full max-w-[1440px] [--arch:max(490px,78vw)] md:min-h-[960px] lg:min-h-0 lg:aspect-[1440/1024]">
 
                 {/* ---------------- HEADLINE, COPY, SEARCH ---------------- */}
                 <div className="relative z-20 mx-auto mt-6 max-w-[900px] px-5 text-center pt-30">

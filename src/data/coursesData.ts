@@ -47,6 +47,7 @@ export interface Course {
   level: "Beginner" | "Intermediate" | "Advanced";
   category: string;
   creatorId: string;
+  username: string;
   about: {
     description: string;
     keyPoints: string[];
@@ -104,6 +105,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Web Development",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Master modern web development from ground up. Learn how to craft server-rendered frontend using Next.js and secure backend REST APIs with Express and PostgreSQL.",
       keyPoints: [
@@ -154,6 +156,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "Mobile Development",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Learn mobile app development using cross-platform technology. Build apps that render natively on both iOS and Android.",
       keyPoints: [
@@ -202,6 +205,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "Data Science",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Dive deep into Data Analysis, Visualization, and Predictive Modeling with Python ecosystem.",
       keyPoints: [
@@ -250,6 +254,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "UI/UX Design",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "A complete pipeline course covering UX wireframing, Figma design systems, and converting designs into responsive HTML/Tailwind CSS.",
       keyPoints: [
@@ -290,7 +295,7 @@ export const courses: Course[] = [
     title: "Docker & Kubernetes: The DevOps Handbook",
     subtitle: "Containerize applications and orchestrate microservices at production scale",
     slug: "docker-kubernetes-devops-handbook",
-    thumbnail: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800",
+    thumbnail: "https://cdn.hashnode.com/res/hashnode/image/upload/v1625551496642/3AbrgiHGz.jpeg",
     price: 120,
     discountPrice: 95,
     rating: 4.9,
@@ -298,6 +303,7 @@ export const courses: Course[] = [
     level: "Advanced",
     category: "DevOps",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Understand container architecture, multi-stage builds, Kubernetes deployments, and automated CI/CD workflows.",
       keyPoints: [
@@ -338,7 +344,7 @@ export const courses: Course[] = [
     title: "Building Generative AI Apps with LangChain & RAG",
     subtitle: "Create AI agents, Custom LLM Chatbots, and Vector Database Applications",
     slug: "building-generative-ai-apps-langchain-rag",
-    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800",
+    thumbnail: "https://jaro-website.s3.ap-south-1.amazonaws.com/wp-content/uploads/2026/07/How-to-Build-AI-Applications-Using-LangChain_-A-Complete-Guide.webp",
     price: 135,
     discountPrice: 99,
     rating: 5.0,
@@ -346,6 +352,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Artificial Intelligence",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Build cutting-edge AI software using OpenAI, LangChain framework, Vector Search Engine, and Retrieval-Augmented Generation.",
       keyPoints: [
@@ -394,6 +401,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "Cyber Security",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Understand web security vulnerabilities, OWASP Top 10, penetration testing methodologies, and defensive security strategies.",
       keyPoints: [
@@ -442,6 +450,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Cloud Computing",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Comprehensive guide to passing AWS certifications and designing infrastructure using Amazon Web Services.",
       keyPoints: [
@@ -482,7 +491,7 @@ export const courses: Course[] = [
     title: "TypeScript Deep Dive & Design Patterns",
     subtitle: "Write cleaner, safer, and maintainable enterprise-level JavaScript code",
     slug: "typescript-deep-dive-design-patterns",
-    thumbnail: "https://images.unsplash.com/photo-1516116211223-4c7142403477?w=800",
+    thumbnail: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*m5hsdKDR_6PHzRJMSW4SLg.png",
     price: 65,
     discountPrice: 45,
     rating: 4.9,
@@ -490,6 +499,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Web Development",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Master TypeScript generics, utility types, advanced type manipulation, and OOP design patterns.",
       keyPoints: [
@@ -538,6 +548,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Web Development",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Learn API design best practices, rate limiting, caching strategies, and GraphQL schema architecture.",
       keyPoints: [
@@ -586,6 +597,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "Mobile Development",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Master Dart programming language and Flutter framework to create high-performance cross-platform applications.",
       keyPoints: [
@@ -634,6 +646,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Database",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Learn advanced SQL queries, database normalization, indexing strategies, and database performance tuning.",
       keyPoints: [
@@ -682,6 +695,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "Web Development",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Master Vue 3 Composition API, Pinia state management, and Nuxt 3 Server-Side Rendering.",
       keyPoints: [
@@ -730,6 +744,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Computer Science",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "In-depth study of Big O notation, Arrays, Linked Lists, Trees, Graphs, Sorting algorithms, and Dynamic Programming.",
       keyPoints: [
@@ -778,6 +793,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "DevOps",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Learn Linux terminal controls, SSH key management, file permissions, Nginx web server config, and Bash automation scripts.",
       keyPoints: [
@@ -826,6 +842,7 @@ export const courses: Course[] = [
     level: "Advanced",
     category: "Software Architecture",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Learn how to break monolithic applications into scalable, decoupled microservices using async messaging.",
       keyPoints: [
@@ -874,6 +891,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     category: "Web Development",
     creatorId: "creator-1",
+    username: "alexrivera",
     about: {
       description: "Master Go syntax, pointers, goroutines, channels, and build high-performance microservices.",
       keyPoints: [
@@ -922,6 +940,7 @@ export const courses: Course[] = [
     level: "Beginner",
     category: "Management",
     creatorId: "creator-2",
+    username: "sophiachen",
     about: {
       description: "Understand software product lifecycles, wireframing, sprint planning, and team management strategies.",
       keyPoints: [

@@ -48,7 +48,7 @@ export default async function CourseDetails({ params, searchParams }: Props) {
         <div className="relative w-full overflow-x-clip">
             <div className="mx-auto grid w-full max-w-330 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(320px,412px)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-12">
 
-                {/* Blue background: rows 1-2 only, full screen width */}
+                {/* Blue background */}
                 <div aria-hidden="true" className="relative col-span-full row-span-2 row-start-1">
                     <div
                         className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-[#0339e3] [background-position:50%_0] [background-size:60px_60px] md:[background-size:120px_120px]"
@@ -56,12 +56,12 @@ export default async function CourseDetails({ params, searchParams }: Props) {
                     />
                 </div>
 
-                {/* Title, creator, badges, share (pt-* = space above the title) */}
+                {/* Title, creator, badges, share  */}
                 <div className="relative col-start-1 row-start-1 pb-8 pt-16 lg:col-span-full mt-25">
                     <CourseHeader course={courseDetails} />
                 </div>
 
-                {/* Sneak peek video (pb-* = blue space below the video) */}
+                {/* Sneak peek video */}
                 <div className="relative col-start-1 row-start-2 pb-16">
                     <CourseVideo
                         thumbnail={courseDetails.thumbnail}
