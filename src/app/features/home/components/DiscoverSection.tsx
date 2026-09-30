@@ -44,7 +44,7 @@ export default function DiscoverSection() {
     };
 
     return (
-        <section className="w-full bg-white py-16 sm:py-20 px-4">
+        <section className="w-full bg-white py-6 sm:py-16 px-4">
             <div className="max-w-5xl mx-auto text-center">
 
                 {/* Title */}
@@ -59,7 +59,7 @@ export default function DiscoverSection() {
                 </p>
 
                 {/* Category Pills Container */}
-                <div className="mt-10 flex flex-wrap justify-center items-center gap-2.5 sm:gap-6 max-w-5xl mx-auto transition-all duration-300">
+                <div className="mt-10 flex flex-wrap justify-center items-center gap-2.5 sm:gap-3 max-w-5xl mx-auto transition-all duration-300">
                     {displayedCategories.map((category) => {
                         const active = isSelected(category);
                         return (

@@ -9,7 +9,7 @@ export default async function LatestCoursesSection() {
   const latestCourses: Course[] = await getLatestCourses()
 
   return (
-    <section className="mx-auto w-full max-w-330 overflow-x-hidden py-10 sm:py-12">
+    <section className="mx-auto w-full max-w-330 overflow-x-hidden py-5">
       {latestCourses.length === 0 ? (
         <p className="text-center text-neutral-500">No courses yet. Check back soon.</p>
       ) : (

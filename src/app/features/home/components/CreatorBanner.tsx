@@ -5,7 +5,7 @@ import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 const poppins = Poppins({ subsets: ["latin"], weight: "600" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500"] });
 
-// Decorative image (put files in /public/images/hero-img/)
+// Decorative image (put files in /images/hero-img/)
 const Deco = ({ src, className = "" }) => (
     <Image
         src={src}
@@ -63,7 +63,7 @@ export default function CreatorBanner() {
                 </p>
 
                 <Link
-                    href="/register"
+                    href="/auth/sign-up"
                     className="inline-block rounded-full bg-[#d9ff1f] px-[30px] py-4 text-lg font-medium text-[#111] transition-transform hover:-translate-y-0.5 md:text-xl"
                 >
                     Join as Creator

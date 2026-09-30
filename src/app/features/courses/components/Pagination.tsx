@@ -34,7 +34,7 @@ export default function Pagination({
     const pages = Array.from({ length: end - start + 1 }, (_, i) => start + i)
 
     return (
-        <nav aria-label="Pagination" className="flex items-center justify-center gap-6 py-10">
+        <nav aria-label="Pagination" className="flex items-center justify-center gap-6 pb-12">
             {/* Previous */}
             {page > 1 ? (
                 <Link href={pageHref(page - 1)} aria-label="Previous page" className={`${arrow} hover:bg-neutral-50`}>

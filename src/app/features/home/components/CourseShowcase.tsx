@@ -1,8 +1,4 @@
-// CourseShowcase.jsx
 import Image from "next/image";
-
-// React + Tailwind. Headings use Poppins: add it via next/font, or
-// <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
 
 const BLUE = "#0533E6";
 const LIME = "#C8F31D";
@@ -20,7 +16,7 @@ const features = [
   "Build a Community",
 ];
 
-// Swap these for real avatar URLs, e.g. "/images/avatars/1.png"
+// Swap these for real avatar URLs
 const avatars = ["#f4b5a3", "#e58fa8", "#6b7280", "#4b5563", "#c9a27a", "#8b6f5a", "#374151"];
 
 const CheckIcon = () => (
@@ -93,14 +89,14 @@ function GrowthSection() {
   );
 }
 
-/* ---------- Section 2: creator cluster left, text right ---------- */
+/* ---------- Section 2: creator cluster ---------- */
 function CreateSection() {
   return (
     <section className="grid items-center gap-12 lg:grid-cols-2">
       {/* image cluster */}
       <div className="relative mx-auto aspect-[541/560] w-full max-w-160">
         <div
-          className="absolute left-0 top-[1.5%] z-10 h-[21%] w-[40%] rounded-lg p-4 text-white"
+          className="absolute left-0 top-[1.5%] z-10 w-[40%] rounded-2xl p-4 text-white"
           style={{ background: BLUE }}
         >
           <p className="text-[15px] leading-tight">Total Revenue</p>
@@ -121,7 +117,7 @@ function CreateSection() {
         />
 
         <div
-          className="absolute left-0 top-[28%] z-30 h-[24%] w-[25%] min-w-[130px] rounded-lg p-4 text-white"
+          className="absolute left-0 top-[26%] z-30 w-[28%] min-w-[130px] rounded-2xl p-4 text-white"
           style={{ background: BLUE }}
         >
           <p className="text-[15px] leading-tight">Year to Date</p>
@@ -144,7 +140,7 @@ function CreateSection() {
           className="absolute left-[60%] top-[14%] z-50 h-auto w-[38%]"
         />
 
-        <div className="absolute left-[52%] top-[57%] z-50 w-[48%] rounded-xl bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+        <div className="absolute left-[52%] top-[57%] z-50 w-[40%] rounded-xl bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
           <p className="text-[15px] text-[#222]">Happy Students</p>
           <p className="mt-1 flex items-center gap-1 text-[10px] font-semibold text-[#222]">
             4.5 <span className="font-normal text-[#999]">(240)</span>

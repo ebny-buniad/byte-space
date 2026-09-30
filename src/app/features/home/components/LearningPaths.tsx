@@ -47,7 +47,7 @@ export default function LearningPaths() {
 
                 {/* Subtitle */}
                 <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-500 max-w-3xl mx-auto font-normal leading-relaxed">
-                    At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories.
+                    At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there&apos;s something for everyone. Unleash your potential and explore our carefully curated categories.
                 </p>
 
                 {/* Categories Grid */}

@@ -43,7 +43,7 @@ export default function Navbar() {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-gray-900 text-white rounded-box z-[10] mt-3 w-52 p-3 shadow-2xl border border-white/10"
+                                className="menu menu-sm dropdown-content bg-gray-900 text-white rounded-box z-10 mt-3 w-52 p-3 shadow-2xl border border-white/10"
                             >
                                 {navLinks}
                             </ul>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
                     {/* End Section (Auth Links & Shop) */}
                     <div className="navbar-end flex items-center gap-2">
-                        <ul className="menu menu-horizontal px-1 gap-1 items-center hidden sm:flex text-sm font-medium">
+                        <ul className="menu menu-horizontal px-1 gap-1 items-center sm:flex text-sm font-medium">
                             {authLinks}
                         </ul>
 
