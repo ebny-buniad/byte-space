@@ -1,12 +1,47 @@
+import CourseCard from '@/app/components/ui/Coursecard'
 import CourseFilters from '@/app/features/courses/components/Coursefilters'
 import CourseSearchBar from '@/app/features/courses/components/CourseSearchBar'
+import Pagination from '@/app/features/courses/components/Pagination'
+import { getAllCourses } from '@/app/features/courses/service/allCourses.service'
 import React from 'react'
 
-export default function CoursesPage() {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+// A param can be a string or string[]; take the first value
+const first = (value: string | string[] | undefined) =>
+    Array.isArray(value) ? value[0] : value
+
+export default async function CoursesPage({ searchParams }: { searchParams: SearchParams }) {
+    const params = await searchParams
+
+    // Load courses using the URL search, filters and page
+    const { courses, totalPages, page } = await getAllCourses({
+        q: first(params.q),
+        category: first(params.category),
+        level: first(params.level),
+        sort: first(params.sort),
+        page: Number(first(params.page)) || 1,
+    })
+
     return (
         <div>
             <CourseSearchBar />
             <CourseFilters />
+
+            {/* Display courses of the current page */}
+            <div className="mx-auto w-full max-w-330 overflow-x-hidden py-10 sm:py-12">
+                {courses.length === 0 ? (
+                    <p className="text-center text-neutral-500">No courses found. Try a different search or filter.</p>
+                ) : (
+                    <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {courses.map((course) => (
+                            <CourseCard key={course.id} course={course} />
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            <Pagination page={page} totalPages={totalPages} />
         </div>
     )
 }

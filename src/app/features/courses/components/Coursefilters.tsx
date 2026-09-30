@@ -105,7 +105,7 @@ export default function CourseFilters() {
     }
 
     return (
-        <div className="space-y-10 max-w-330 mx-auto py-15 ">
+        <div className="space-y-10 max-w-330 mx-auto pt-20 pb-6 ">
             <div className="grid grid-cols-[1fr_auto] items-center gap-3">
                 <div className="flex flex-wrap items-center gap-3">
                     {/* Clears all filters */}

@@ -1,21 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
-/* ---------- Types (loose on nested objects, since the log shows [Object]) ---------- */
-export type Course = {
-  id: string
-  title: string
-  slug: string
-  thumbnail: string
-  price: number
-  discountPrice?: number
-  rating: number
-  totalRatings: number
-  level: string
-  creator?: { name: string; avatar?: string }
-  lessons?: { duration?: number }[] // duration in minutes (optional)
-  reviews?: { avatar?: string; user?: { avatar?: string; name?: string }; name?: string }[]
-}
+import { Course } from '@/app/features/courses/types/course.type'
 
 /* ---------- Helpers ---------- */
 function formatDuration(totalMinutes: number) {

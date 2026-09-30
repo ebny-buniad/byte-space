@@ -1,9 +1,11 @@
 import React from 'react'
 import { getLatestCourses } from '../services/latestCourses.service'
-// import CourseCard , { type Course } from '@/app/components/ui/Coursecard'
-import CourseCard, { type Course } from '@/app/components/ui/Coursecard'
+import CourseCard from '@/app/components/ui/Coursecard'
+import { Course } from '../../courses/types/course.type'
 
 export default async function LatestCoursesSection() {
+
+  // Get all latest courses
   const latestCourses: Course[] = await getLatestCourses()
 
   return (
