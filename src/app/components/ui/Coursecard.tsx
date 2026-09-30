@@ -10,6 +10,12 @@ function formatDuration(totalMinutes: number) {
   return [h ? `${h} hour${h > 1 ? 's' : ''}` : '', m ? `${m} mins` : ''].filter(Boolean).join(' ')
 }
 
+// "12:30" -> 12.5 minutes
+function toMinutes(d: string) {
+  const [m, s] = d.split(':').map(Number)
+  return (m || 0) + (s || 0) / 60
+}
+
 const AVATAR_BG = ['bg-pink-300', 'bg-amber-300', 'bg-sky-300', 'bg-emerald-300', 'bg-violet-300']
 
 /* ---------- Small pieces ---------- */
@@ -49,8 +55,8 @@ function AvatarStack({ course }: { course: Course }) {
   return (
     <div className="flex items-center">
       {slots.map((p, i) => {
-        const src = p?.avatar ?? p?.user?.avatar
-        const name = p?.user?.name ?? p?.name ?? ''
+        const src = p?.userAvatar
+        const name = p?.userName ?? ''
         return (
           <span
             key={i}
@@ -76,8 +82,14 @@ function AvatarStack({ course }: { course: Course }) {
 
 /* ---------- Card ---------- */
 export default function CourseCard({ course }: { course: Course }) {
-  const lessonCount = course.lessons?.length ?? 0
-  const minutes = (course.lessons ?? []).reduce((sum, l) => sum + (l.duration ?? 0), 0)
+  const modules = course.lessons ?? []
+  const lessonCount = modules.reduce((n, m) => n + m.videos.length, 0)
+  const minutes = Math.round(
+    modules.reduce(
+      (sum, m) => sum + m.videos.reduce((s, v) => s + toMinutes(v.duration), 0),
+      0
+    )
+  )
   const duration = formatDuration(minutes)
   const commentCount = course.reviews?.length ?? 0
   const hasDiscount = course.discountPrice != null && course.discountPrice < course.price

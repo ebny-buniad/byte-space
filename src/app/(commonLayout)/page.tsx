@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import CourseShowcase from "../features/home/components/CourseShowcase";
 import CreatorBanner from "../features/home/components/CreatorBanner";
 import DiscoverSection from "../features/home/components/DiscoverSection";
@@ -10,10 +11,16 @@ import Testimonials from "../features/home/components/Testimonials";
 export default function Home() {
   return (
     <div>
-      <HeroSection />
+      <Suspense fallback={null}>
+        <HeroSection />
+      </Suspense>
       <LogoSections />
-      <DiscoverSection />
-      <LatestCoursesSection />
+      <Suspense fallback={null}>
+        <DiscoverSection />
+      </Suspense>
+      <Suspense fallback={null}>
+        <LatestCoursesSection />
+      </Suspense>
       <LearningPaths />
       <CourseShowcase />
       <CreatorBanner />

@@ -1,4 +1,5 @@
-// 1. Creator Type Definition
+// src/app/features/courses/types/course.type.ts
+
 export type Creator = {
   id: string;
   name: string;
@@ -11,35 +12,38 @@ export type Creator = {
   coursesCount: number;
 };
 
-// 2. About Section Type Definition
 export type CourseAbout = {
   description: string;
   keyPoints: string[];
   sneakPeekVideoId: string;
 };
 
-// 3. Lesson Item Type Definition
-export type Lesson = {
-  id?: string;
-  title?: string;
-  duration?: number; // duration in minutes or seconds
-  videoUrl?: string;
-  isFreePreview?: boolean;
+// A single video inside a module
+export type VideoLesson = {
+  id: string;
+  title: string;
+  duration: string; // "mm:ss"
+  youtubeVideoId: string;
+  isPreview: boolean;
 };
 
-// 4. Review Item Type Definition
+// A module (what the data calls a "lesson") containing videos
+export type ModuleLesson = {
+  id: string;
+  moduleTitle: string;
+  moduleSubtitle: string;
+  videos: VideoLesson[];
+};
+
 export type Review = {
-  id?: string;
-  rating?: number;
-  comment?: string;
-  createdAt?: string;
-  user?: {
-    name?: string;
-    avatar?: string;
-  };
+  id: string;
+  userName: string;
+  userAvatar: string;
+  rating: number;
+  date: string;
+  comment: string;
 };
 
-// 5. Main Course Type Definition
 export type Course = {
   id: string;
   title: string;
@@ -47,15 +51,18 @@ export type Course = {
   slug: string;
   thumbnail: string;
   price: number;
-  discountPrice?: number; // Optional type for discounted price
+  discountPrice?: number;
   rating: number;
   totalRatings: number;
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | string;
+  level: 'Beginner' | 'Intermediate' | 'Advanced';
   category: string;
   creatorId: string;
   username: string;
   about: CourseAbout;
-  lessons: Lesson[];
+  lessons: ModuleLesson[];
   reviews: Review[];
-  creator?: Creator | null; // Detailed joined creator object
+  creator?: Creator | null;
 };
+
+// Backwards-compatible alias so existing `import { Lesson }` keeps working
+export type Lesson = ModuleLesson;
