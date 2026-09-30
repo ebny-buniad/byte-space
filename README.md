@@ -1,4 +1,5 @@
 # ByteSpace
+**Live Link** [Click Here](https://byte-space-ochre.vercel.app/)
 
 ByteSpace is an online course marketplace where learners can discover courses, explore creators, and read course details before enrolling. It is built with Next.js (App Router) and uses a feature-based folder structure.
 
@@ -43,7 +44,7 @@ ByteSpace is an online course marketplace where learners can discover courses, e
 
 ```bash
 # 1. Clone the repository
-git clone <your-repository-url>
+git clone <https://github.com/ebny-buniad/byte-space.git>
 
 # 2. Go to the project folder
 cd byte-space
